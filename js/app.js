@@ -48,8 +48,11 @@
  */
 
 // Build menu 
+document.querySelector('#navbar__list').innerHTML =
+    `<li class="menu_link active_class"><a  href="#section1">Section 1</a></li> 
+    <li class = "menu_link"><a href = "#section2"> Section 2 </a></li >
+    <li class = "menu_link" ><a href = "#section3"> Section 3 </a></li > `;
 
 // Scroll to section on link click
 
 // Set sections as active
-
