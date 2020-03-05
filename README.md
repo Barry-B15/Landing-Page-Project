@@ -9,7 +9,7 @@ As a first step, I have:
 * Connected the index.html to the js file
 * Added a few js code to generate the head navigation and 
 * Added some CSS style to the links.
-Next:
+### Next:
 * I added a smooth scrolling effect
 * With some CSS update
 
