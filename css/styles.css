@@ -67,8 +67,21 @@ section {
 
 /* ---- Module Rules ---- */
 
-
+.brand:visited {color: white;}
 /* Navigation Styles*/
+#brand, 
+.brand {
+    background: rgb(25, 51, 39);
+    font-weight: bolder;
+    font-size: 5rem;
+    text-decoration: none;
+    color: white;
+    padding: 0.2em 0em 0em 1em;
+}
+.navbar__toggler {
+    background: rgb(25, 51, 39);
+    border: none;
+}
 
 .navbar__menu ul {
     padding-left: 0;
@@ -79,6 +92,9 @@ section {
 
 
 /* Link style */
+#navbar__list a {
+    text-decoration: none;
+}
 
 #navbar__list a:hover {
     color: #cc1;
