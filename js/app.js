@@ -12,9 +12,9 @@
  * JS Standard: ESlint
  * 
  */
- //1. Build menu 
+ //1. Build menu dynamically
 document.querySelector('#navbar__list').innerHTML =
-    `<li class="menu_link active_class"><a  href="#section1">Section 1</a></li> 
+    `<li class= "menu_link active"><a  href="#section1">Section 1</a></li> 
     <li class = "menu_link"><a href = "#section2"> Section 2 </a></li >
     <li class = "menu_link" ><a href = "#section3"> Section 3 </a></li > `;
 
@@ -120,3 +120,12 @@ document.querySelector('#navbar__list').innerHTML =
 // Scroll to section on link click
 
 // Set sections as active
+const topMenuNav = document.getElementById("navbar__list");
+const menuItems = topMenuNav.getElementsByClassName("menu_link");
+for (let i = 0; i < menuItems.length; i++) {
+    menuItems[i].addEventListener("click", function() {
+        const current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
+}
