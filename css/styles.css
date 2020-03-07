@@ -31,7 +31,23 @@ h1 {
 @media only screen and (min-width: 35em) {
     h1 {
         font-size: 7em;
-        margin: 2em 4rem 1em;
+        margin: 1em 4rem 1em;
+    }
+}
+
+
+/*  my addition for smaller screens */
+
+@media(min-width: 450px) and (max-width: 650px) {
+    .brand,
+    #brand {
+        font-size: 1em;
+        padding: 0;
+        /* padding: 0.2em 0em 0em 0.2em; */
+    }
+    .navbar__menu ul, 
+    .navbar__menu li {
+        text-align: left;
     }
 }
 
@@ -67,17 +83,28 @@ section {
 
 /* ---- Module Rules ---- */
 
-.brand:visited {color: white;}
+
 /* Navigation Styles*/
-#brand, 
+
+.brand:visited {
+    color: white;
+}
+
+.menu_link.active {
+    background: #555555;
+}
+
+#brand,
 .brand {
     background: rgb(25, 51, 39);
     font-weight: bolder;
     font-size: 5rem;
     text-decoration: none;
     color: white;
-    padding: 0.2em 0em 0em 1em;
+    padding: 0em 0em 0em 0.5em;
+    margin: 0em;
 }
+
 .navbar__toggler {
     background: rgb(25, 51, 39);
     border: none;
@@ -92,6 +119,7 @@ section {
 
 
 /* Link style */
+
 #navbar__list a {
     text-decoration: none;
 }
@@ -111,7 +139,7 @@ a:visited {
     display: inline-block;
     color: #fff;
     padding: 0.5em 1em;
-    margin: 0.5em 1em 0.5em 0em;
+    margin: 0em 1em 0.2em 0em;
     background-color: rgba(91, 112, 83, 0.589);
     border-radius: 0.3em;
 }
