@@ -39,8 +39,144 @@ const navbarLinks = document.querySelectorAll('.navbar__menu a');
  * Begin Main Functions
  * 
  */
+ //=====================================================================
+// Add Some data
+//=====================================================================
+
+const blowfish = [`Blowfish is very popular in Japan. 
+        It is among the most expensive dishes at sushi places.
+        I feel it is necessary for us to know a few facts about this fish.`];
+
+const toAdd = `<p class="blowfish">According to <strong>National Geographic</strong> 
+        <blockquote cite="https://kids.nationalgeographic.com/animals/fish/pufferfish/"> 
+        Pufferfish can inflate into a ball shape to evade predators. 
+        Also known as blowfish, these clumsy swimmers fill their elastic 
+        stomachs with huge amounts of water (and sometimes air) and blow 
+        themselves up to several times their normal size.
+
+        </blockquote> <blockquote> 
+        Some pufferfish species also have spines on their skin to ward off 
+        predators. Even if a predator gobbles up a puffer before it 
+        inflates, it won't enjoy the snack. Most pufferfish contain a 
+        toxic substance that makes them foul tasting and potentially 
+        deadly to other fish. The toxin is deadly to humans. 
+        There is enough poison in one pufferfish to kill 30 adult humans, 
+        and there is no known antidote.</blockquote> 
+         <span class="puffer-source"> <br>
+        Now we can understand why it costs so much; it takes years of training for the chef
+        to get the skills to completely remove the poison and 
+        to get a license to prepare this special creature for diners.</p>
+        `
+// select the section
+const sectOne = document.querySelector('#section1 .landing__container');
+
+// change the header to reflect data
+sectOne.innerHTML = "<h2>Blowfish</h2>";
+
+// add a paragraph to section1
+sectOne.insertAdjacentHTML('beforeEnd', '<p>'+ blowfish +'</p>');
+
+//adding more to an existing text on the page
+sectOne.insertAdjacentHTML('beforeEnd', toAdd);
 
 
+const remora = {
+    name : 'Remora',
+    species : '8 species',
+    fact: `Remoras don't live in shallow waters, they are found 
+            around 328 feet deep in the ocean and their sizes can 
+            nge between 0.98 - 2.95 feet in length. 
+            Remora are nicknamed sharksucker or suckerfish as they use their 
+            suckers to suck on to larger fish for most of their journeys.`,
+    classification: "fish",
+    habitat: 'ocean',
+    weight: 'a common remora can reach a max weight of 1.1kg (2.4lbs)',
+    status: 'not on endangered list',
+    kingdom:    'Animalia',
+    superfamily:    'Percoidea',
+    scientificName: 'Echeneidae',
+    diet : "carnivore", 
+    habitat: 'ocean',
+    info : `<p>According to <strong>National Geographic</strong> 
+        <blockquote cite=" https://www.nationalgeographic.com/science/phenomena/2013/07/17/what-good-is-half-a-sucker/">
+        THE REMORA IS so ridiculous that no one would try to make it up. The top of its head is a giant, flat suction cup. It uses 
+        the cup to lock onto the bodies of bigger animals, such as 
+        sharks, sea turtles, and whales. As the big animal swims for 
+        miles in search of a meal, the remora hangs on for the ride. 
+        When its host finds a victim, the remora detaches and feasts 
+        on the remains. It sometimes cleans its host’s body and mouth 
+        of parasites, and then clamps its head back on for another 
+        ride.</blockquote>`
+};
+
+const seahorse = {
+    name: 'seahorse',
+    scientificName: 'Syngnathidae',
+    species: 'about 50 known species',
+    classification: 'Fish',
+    status: 'Data Deficient or Vulnerable, depending on species',
+    lifespan: '(in wild): 3 years',
+    weight: '200g',
+    size: '2- 35cm',
+    topSpeed: '150cm per hour',
+    diet: 'Carnivore',
+    habitat: 'Ocean,  coral reefs, coastal waters',
+    fact: `Seahorse have a neck, unlike other fish. They also have a backbone, but no ribs, 
+        instead they have rings that go all the way down into their tail.
+        Sea horses have 3 main fins to help them swim and steer. 
+        They are one fin on their back and one small fin on each side of their head. 
+        Seahorse also have a 4th fin under their belly for stability control. 
+        Their fins help them stabilize their body in the water.
+        The seahorse male is also known to carry the babies.`,
+    info : `<p>According to <strong>National Geographic</strong> </p>
+        <blockquote cite="https://www.natgeokids.com/nz/discover/animals/sea-life/seahorse-facts/">  
+        Seahorses are tiny fish that are named for the shape of their head, which looks like the 
+        head of ... yup, you guessed it -a tiny horse. There are around 36 seahorse species, which are 
+        found in tropical and temperate coastal waters where they swim upright among seaweed and other plants.
+        </blockquote>
+        <blockquote>
+        Seahorses' bodies are covered in tiny, spiny plates, all the way 
+        from their head down to their curled, flexible tail. The tail can grasp objects, 
+        which comes in handy when these cool critters want to anchor themselves to vegetation. 
+        To move forward through the water, seahorses use their dorsal fin (back fin). 
+        To move up and down, they adjust the volume of air in a tiny pocket inside their body, 
+        called a 'swim bladder'.
+    <blockquote>
+    <p> Source: https://www.natgeokids.com/nz/discover/animals/sea-life/seahorse-facts/ </p>`
+};
+
+function animalFunFacts(animal) { 
+    const cardHTML = 
+    `<div class="description">
+        <p class="fact"> ${animal.fact}</p>
+        <ul class="details">
+            <li><strong>Scientific Name</strong>: ${animal.scientificName}</li>
+            <li><strong>Species</strong>: ${animal.species}</li>
+            <li><strong>Classification</strong>: ${animal.classification}</li>
+            <li><strong>Diet</strong>: ${animal.diet}</li>
+            <li><strong>Weight</strong>: ${animal.weight}</li>
+            <li><strong>Habitat</strong>: ${animal.habitat}</li>
+            <li><strong>Scientific Kingdom</strong>: ${animal.kingdom}</li>
+            <li><strong>Super Family</strong>: ${animal.superfamily}</li>
+        </ul>
+        <p class="brief">${animal.info}</p>
+        
+    </div>`;
+
+    return cardHTML;
+}
+
+//add to Section 2 data
+const sectTwo = document.querySelector('#section2 .landing__container');
+sectTwo.innerHTML = '<h2>REMORA';
+sectTwo.insertAdjacentHTML('beforeEnd', animalFunFacts(remora));
+
+//add to section 3 data
+const sectThree = document.querySelector('#section3 .landing__container');
+sectThree.innerHTML = "<h2>SEAHORSE";
+sectThree.insertAdjacentHTML('beforeEnd', animalFunFacts(seahorse));
+
+//===============End of main Content data==============================================
 
 // Add class 'active' to section when near top of viewport
 

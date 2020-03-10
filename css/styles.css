@@ -183,6 +183,12 @@ a:visited {
 }
 
 
+/* using css pseudo-class to add a source Link to section 1 data */
+
+.puffer-source::after {
+    content: "Read more at: https://kids.nationalgeographic.com/animals/fish/pufferfish/";
+}
+
 /* ---- Theme Rules ---- */
 
 
