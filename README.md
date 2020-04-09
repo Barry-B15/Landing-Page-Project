@@ -15,10 +15,9 @@ As a first step, I have:
 ### Adding Data to the Sections
 I've added data from the .js file but lost the initial rolling circles
 What am I doing wrong?
+### Activate the section near the top of viewport
+* Fixed the rolling circles in the sections
+* Now the sections change when scroll to the top of the viewport 
+* The active sections also change colors
+* A new section was also added making four sections in total
 
-## Instructions
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
