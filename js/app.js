@@ -12,11 +12,12 @@
  * JS Standard: ESlint
  * 
  */
- //1. Build menu dynamically
+//1. Build menu dynamically
 document.querySelector('#navbar__list').innerHTML =
-    `<li class= "menu_link active"><a  href="#section1">Section 1</a></li> 
-    <li class = "menu_link"><a href = "#section2"> Section 2 </a></li >
-    <li class = "menu_link" ><a href = "#section3"> Section 3 </a></li > `;
+    `<li class="menu_link active"><a  href="#section1">Section 1</a></li> 
+    <li class="menu_link"><a href="#section2"> Section 2 </a></li>
+    <li class="menu_link"><a href="#section3"> Section 3 </a></li>
+    <li class="menu_link"><a href="#section4"> Section 4 </a></li>`;
 
 /**
  * Define Global Variables
@@ -34,12 +35,7 @@ const navbarToggler = document.querySelector('.navbar__toggler');
 const navbarMenu = document.querySelector('.navbar__menu ul');
 const navbarLinks = document.querySelectorAll('.navbar__menu a');
 
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
- */
- //=====================================================================
+//=====================================================================
 // Add Some data
 //=====================================================================
 
@@ -67,22 +63,22 @@ const toAdd = `<p class="blowfish">According to <strong>National Geographic</str
         to get the skills to completely remove the poison and 
         to get a license to prepare this special creature for diners.</p>
         `
-// select the section
+    // select the section
 const sectOne = document.querySelector('#section1 .landing__container');
 
 // change the header to reflect data
 sectOne.innerHTML = "<h2>Blowfish</h2>";
 
 // add a paragraph to section1
-sectOne.insertAdjacentHTML('beforeEnd', '<p>'+ blowfish +'</p>');
+sectOne.insertAdjacentHTML('beforeEnd', '<p>' + blowfish + '</p>');
 
 //adding more to an existing text on the page
 sectOne.insertAdjacentHTML('beforeEnd', toAdd);
 
 
 const remora = {
-    name : 'Remora',
-    species : '8 species',
+    name: 'Remora',
+    species: '8 species',
     fact: `Remoras don't live in shallow waters, they are found 
             around 328 feet deep in the ocean and their sizes can 
             nge between 0.98 - 2.95 feet in length. 
@@ -92,12 +88,12 @@ const remora = {
     habitat: 'ocean',
     weight: 'a common remora can reach a max weight of 1.1kg (2.4lbs)',
     status: 'not on endangered list',
-    kingdom:    'Animalia',
-    superfamily:    'Percoidea',
+    kingdom: 'Animalia',
+    superfamily: 'Percoidea',
     scientificName: 'Echeneidae',
-    diet : "carnivore", 
+    diet: "carnivore",
     habitat: 'ocean',
-    info : `<p>According to <strong>National Geographic</strong> 
+    info: `<p>According to <strong>National Geographic</strong> 
         <blockquote cite=" https://www.nationalgeographic.com/science/phenomena/2013/07/17/what-good-is-half-a-sucker/">
         THE REMORA IS so ridiculous that no one would try to make it up. The top of its head is a giant, flat suction cup. It uses 
         the cup to lock onto the bodies of bigger animals, such as 
@@ -128,7 +124,7 @@ const seahorse = {
         Seahorse also have a 4th fin under their belly for stability control. 
         Their fins help them stabilize their body in the water.
         The seahorse male is also known to carry the babies.`,
-    info : `<p>According to <strong>National Geographic</strong> </p>
+    info: `<p>According to <strong>National Geographic</strong> </p>
         <blockquote cite="https://www.natgeokids.com/nz/discover/animals/sea-life/seahorse-facts/">  
         Seahorses are tiny fish that are named for the shape of their head, which looks like the 
         head of ... yup, you guessed it -a tiny horse. There are around 36 seahorse species, which are 
@@ -145,10 +141,47 @@ const seahorse = {
     <p> Source: https://www.natgeokids.com/nz/discover/animals/sea-life/seahorse-facts/ </p>`
 };
 
-function animalFunFacts(animal) { 
-    const cardHTML = 
-    `<div class="description">
+const barracuda = {
+    image: ' <img src="">',
+    scientificName: 'sphyraena',
+    diet: 'carnivore',
+    species: '20 species?',
+    weight: 'can reach about 47kg?',
+    habitat: 'coaster waters, ocean',
+    classification: 'Animalia',
+    Phylum: 'Chordata',
+    Class: 'Actinopterygii',
+    kingdom: 'Perciformes',
+    Family: 'Sphyraenidae',
+    superfamily: 'Sphyraena',
+
+    facts: ` Behavior and Diet: https: //kids.kiddle.co/Barracuda
+    Barracudas are ferocious, opportunistic predators, relying on surprise and short bursts of speed, up to 27 mph(43 km / h), to overtake their prey.
+
+    Adults of most species are more or less solitary,
+    while young and half - grown fish frequently congregate.Barracudas prey primarily on fish(which may include some as large as themselves).They kill and consume larger prey by tearing chunks of flesh.Barracuda are competitive species and often are seen competing against mackerel, needle fish and sometimes even dolphins for prey.
+
+    Barracuda feed on an array of prey including fish such as jacks, grunts, groupers, snappers, small tunas, mullets, killifishes, herrings, and anchovies by simply biting them in half.They also seem to consume smaller species of sustenance that are in front of them.`,
+
+    info: ` Barracuda are snake - like in appearance, with prominent, sharp - edged, fang - like teeth, much like piranha, all of different sizes, set in sockets of their large jaws.They have large, pointed heads with an underbite in many species.Their gill covers have no spines and are covered with small scales.Their two dorsal fins are widely separated, with the anterior fin having five spines, and the posterior fin having one spine and 9 soft rays.The posterior dorsal fin is similar in size to the anal fin and is situated above it.The lateral line is prominent and extends straight from head to tail.The spinous dorsal fin is placed above the pelvic fins and is normally retracted in a groove.The caudal fin is moderately forked with its posterior edged double - curved and is set at the end of a stout peduncle.The pectoral fins are placed low on the sides.Its swim bladder is large.
+    <p>
+    The barracuda 's long, thin body makes it an excellent swimmer, up to 25 mph, which is about the speed a car drives on a quiet, neighborhood street. The giant mouth filled with many uneven razor-sharp teeth also makes it a great hunter, like a tiger! Its fangs are in a strong bottom jaw that juts outs farther than the upper jaw, giving it a frightening look.
+    </p>
+    <p>
+    The long and slender body of the barracuda makes it a fast swimmer.
+    barracuda
+    Barracuda are dark green, blue, or grayish - brown and have stripes on top of their bodies, like a tiger, too!Their bellies are always white.Young barracuda can even turn different colors and patterns to blend in with their surroundings.
+    </p>
+    <p>
+    Many types of barracuda are small, up to 18 inches, which is about as long as your arm.But the great barracuda is three times that size and can grow up to six feet long and weigh 110 pounds.That 's as big as an adult human!</p>
+    <p>Source: "https: //study.com/academy/lesson/barracuda-lesson-for-kids.html"</p>`
+};
+
+function animalFunFacts(animal) {
+    const cardHTML =
+        `<div class="description">
         <p class="fact"> ${animal.fact}</p>
+        <p class="image">${animal.image}</p>
         <ul class="details">
             <li><strong>Scientific Name</strong>: ${animal.scientificName}</li>
             <li><strong>Species</strong>: ${animal.species}</li>
@@ -176,10 +209,11 @@ const sectThree = document.querySelector('#section3 .landing__container');
 sectThree.innerHTML = "<h2>SEAHORSE";
 sectThree.insertAdjacentHTML('beforeEnd', animalFunFacts(seahorse));
 
+const sectFour = document.querySelector('#section4 .landing__container');
+sectFour.innerHTML = '<h2>Barracuda';
+sectFour.insertAdjacentHTML('beforeEnd', animalFunFacts(barracuda));
+
 //===============End of main Content data==============================================
-
-// Add class 'active' to section when near top of viewport
-
 
 // Scroll to anchor ID using scrollTO event
 //3. My test
@@ -188,28 +222,24 @@ navbarToggler.addEventListener("click", navbarTogglerClick);
 // above line moved to the smooth scroll func as seen in stackoverflow
 
 function navbarTogglerClick() {
-	navbarToggler.classList.toggle("open-navbar-toggler");
-	navbarMenu.classList.toggle("open");	
+    navbarToggler.classList.toggle("open-navbar-toggler");
+    navbarMenu.classList.toggle("open");
 }
 
-
-
 for (let i = 0; i < navbarLinks.length; i++) {
-		navbarLinks[i].addEventListener("click", navbarLinkClick);
-	}
-
-
+    navbarLinks[i].addEventListener("click", navbarLinkClick);
+}
 
 function navbarLinkClick(event) {
-	smoothScroll(event);
+    smoothScroll(event);
 
-	if (navbarMenu.classList.contains("open")) {
-		navbarToggler.click();
-	}
+    if (navbarMenu.classList.contains("open")) {
+        navbarToggler.click();
+    }
 }
 
 function smoothScroll(event) {
-	event.preventDefault(); // met 1.2, 2
+    event.preventDefault(); // met 1.2, 2
     const targetId = event.currentTarget.getAttribute("href") === "#" ? "header" : event.currentTarget.getAttribute("href"); // method 3
     const targetPosition = document.querySelector(targetId).offsetTop; // we need to know the current position
     const startPosition = window.pageYOffset;
@@ -247,11 +277,7 @@ function easeOutQuart(t, b, c, d) {
  * 
  */
 
-/*//1. Build menu 
-document.querySelector('#navbar__list').innerHTML =
-    `<li class="menu_link active_class"><a  href="#section1">Section 1</a></li> 
-    <li class = "menu_link"><a href = "#section2"> Section 2 </a></li >
-    <li class = "menu_link" ><a href = "#section3"> Section 3 </a></li > `;*/
+/*//1. Build menu */
 
 // Scroll to section on link click
 
@@ -265,3 +291,32 @@ for (let i = 0; i < menuItems.length; i++) {
         this.className += " active";
     });
 }
+
+// Add class 'active' to section when near top of viewport
+/*Highlight active section on scroll */
+const section1 = document.querySelector('#section1');
+const section2 = document.querySelector('#section2');
+const section3 = document.querySelector('#section3');
+const section4 = document.querySelector('#section4');
+
+const mainSections = document.querySelector('body main');
+const sections = mainSections.getElementsByTagName('section');
+
+const active = document.getElementsByTagName('a#section1');
+
+const bgColors = ['rgba(0, 0, 0, 0.1', 'rgba(0, 0, 0, 0.2', 'rgba(0, 0, 0, 0.3', 'rgba(0,0,0,0.4)'];
+// This colors for the active sections
+
+const activeClass = window.addEventListener('scroll', () => {
+
+    for (let i = 0; i < sections.length; i++) {
+
+        const elem = sections[i].getBoundingClientRect();
+
+        if (elem.top < window.innerHeight && elem.top <= 0) {
+            this.console.log(sections[i]);
+            sections[i].classList.add('active-class');
+            sections[i].style.background = bgColors[i];
+        }
+    }
+});
