@@ -20,4 +20,5 @@ What am I doing wrong?
 * Now the sections change when scroll to the top of the viewport 
 * The active sections also change colors
 * A new section was also added making four sections in total
-
+#### Images added
+Just a minor update, added images to the sections
