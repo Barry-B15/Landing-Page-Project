@@ -14,7 +14,7 @@
  */
 //1. Build menu dynamically
 document.querySelector('#navbar__list').innerHTML =
-    `<li class="menu_link active"><a  href="#section1">Section 1</a></li> 
+    `<li class="menu_link active"><a href="#section1">Section 1</a></li> 
     <li class="menu_link"><a href="#section2"> Section 2 </a></li>
     <li class="menu_link"><a href="#section3"> Section 3 </a></li>
     <li class="menu_link"><a href="#section4"> Section 4 </a></li>`;
@@ -43,7 +43,8 @@ const blowfish = [`Blowfish is very popular in Japan.
         It is among the most expensive dishes at sushi places.
         I feel it is necessary for us to know a few facts about this fish.`];
 
-const toAdd = `<p class="blowfish">According to <strong>National Geographic</strong> 
+const toAdd = `<p class="image"><figure><img src="images/blowfish2.jpg"><figcaption>Image of a blowfish </figcaption> </figure></p>
+        <p class="blowfish">According to <strong>National Geographic</strong> 
         <blockquote cite="https://kids.nationalgeographic.com/animals/fish/pufferfish/"> 
         Pufferfish can inflate into a ball shape to evade predators. 
         Also known as blowfish, these clumsy swimmers fill their elastic 
@@ -62,12 +63,13 @@ const toAdd = `<p class="blowfish">According to <strong>National Geographic</str
         Now we can understand why it costs so much; it takes years of training for the chef
         to get the skills to completely remove the poison and 
         to get a license to prepare this special creature for diners.</p>
+        <p class="image-src">Image source: https://upload.wikimedia.org/wikipedia/commons/a/a9/Arothron_meleagris_by_NPS.jpg</p>
         `
     // select the section
 const sectOne = document.querySelector('#section1 .landing__container');
 
 // change the header to reflect data
-sectOne.innerHTML = "<h2>Blowfish</h2>";
+sectOne.innerHTML = "<h2>BLOWFISH</h2>";
 
 // add a paragraph to section1
 sectOne.insertAdjacentHTML('beforeEnd', '<p>' + blowfish + '</p>');
@@ -77,6 +79,7 @@ sectOne.insertAdjacentHTML('beforeEnd', toAdd);
 
 
 const remora = {
+    image: '<figure><img src="images/remora2.jpg"><figcaption>Remoras swimming with, and hitch-hiking on a shark </figcaption> </figure>',
     name: 'Remora',
     species: '8 species',
     fact: `Remoras don't live in shallow waters, they are found 
@@ -102,10 +105,12 @@ const remora = {
         When its host finds a victim, the remora detaches and feasts 
         on the remains. It sometimes cleans its host’s body and mouth 
         of parasites, and then clamps its head back on for another 
-        ride.</blockquote>`
+        ride.</blockquote>
+        <p class="image-src">Image source: https://media.gettyimages.com/videos/underwater-wildlife-and-scenics-south-africa-video-id543943292?s=640x640</p>`
 };
 
 const seahorse = {
+    image: '<figure><img src = "images/seahorse2.jpg" ><figcaption>Image of a seahorse </figcaption> </figure>',
     name: 'seahorse',
     scientificName: 'Syngnathidae',
     species: 'about 50 known species',
@@ -138,11 +143,12 @@ const seahorse = {
         To move up and down, they adjust the volume of air in a tiny pocket inside their body, 
         called a 'swim bladder'.
     <blockquote>
-    <p> Source: https://www.natgeokids.com/nz/discover/animals/sea-life/seahorse-facts/ </p>`
+    <p class="source"> Source: https://www.natgeokids.com/nz/discover/animals/sea-life/seahorse-facts/ </p>
+    <p class="image-src">Image source: https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AGfp-lined-seahorse.jpg&psig=AOvVaw1QZTZ7-7OYfL7WIDgZGneW&ust=1586704875851000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDM7sLW4OgCFQAAAAAdAAAAABAc</p>`
 };
 
 const barracuda = {
-    image: ' <img src="">',
+    image: '<figure><img src="images/barracuda2.jpg"><figcaption>Barracuda showing some sharp teeth </figcaption> </figure>',
     scientificName: 'sphyraena',
     diet: 'carnivore',
     species: '20 species?',
@@ -155,7 +161,7 @@ const barracuda = {
     Family: 'Sphyraenidae',
     superfamily: 'Sphyraena',
 
-    facts: ` Behavior and Diet: https: //kids.kiddle.co/Barracuda
+    fact: ` Behavior and Diet: https: //kids.kiddle.co/Barracuda
     Barracudas are ferocious, opportunistic predators, relying on surprise and short bursts of speed, up to 27 mph(43 km / h), to overtake their prey.
 
     Adults of most species are more or less solitary,
@@ -174,7 +180,8 @@ const barracuda = {
     </p>
     <p>
     Many types of barracuda are small, up to 18 inches, which is about as long as your arm.But the great barracuda is three times that size and can grow up to six feet long and weigh 110 pounds.That 's as big as an adult human!</p>
-    <p>Source: "https: //study.com/academy/lesson/barracuda-lesson-for-kids.html"</p>`
+    <p class="source">Source: "https: //study.com/academy/lesson/barracuda-lesson-for-kids.html"</p>
+    <p class="image-src">Image source: https://i.ytimg.com/vi/VOc_yE-LC-w/hqdefault.jpg</p>`
 };
 
 function animalFunFacts(animal) {
@@ -210,7 +217,7 @@ sectThree.innerHTML = "<h2>SEAHORSE";
 sectThree.insertAdjacentHTML('beforeEnd', animalFunFacts(seahorse));
 
 const sectFour = document.querySelector('#section4 .landing__container');
-sectFour.innerHTML = '<h2>Barracuda';
+sectFour.innerHTML = '<h2>BARRACUDA';
 sectFour.insertAdjacentHTML('beforeEnd', animalFunFacts(barracuda));
 
 //===============End of main Content data==============================================
@@ -320,3 +327,26 @@ const activeClass = window.addEventListener('scroll', () => {
         }
     }
 });
+
+//remora
+//https: //image.shutterstock.com/z/stock-photo-whale-shark-swimming-under-water-in-the-ocean-near-the-island-of-koh-tao-in-the-gulf-of-thailand-123660703.jpg
+//    Seahorse
+//image: https: //www.inkart.net/images/large_images/pacific_seahorse.jpg
+
+
+//free-barracuda
+//https://i.ytimg.com/vi/VOc_yE-LC-w/hqdefault.jpg
+
+//free-seahorse2
+//https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AGfp-lined-seahorse.jpg&psig=AOvVaw1QZTZ7-7OYfL7WIDgZGneW&ust=1586704875851000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDM7sLW4OgCFQAAAAAdAAAAABAc
+
+//free remora
+//https://media.gettyimages.com/videos/underwater-wildlife-and-scenics-south-africa-video-id543943292?s=640x640
+
+//free-puff1
+//https://p1.pxfuel.com/preview/710/149/191/water-underwater-animal-themes-sea-swimming-animal-animal-wildlife-royalty-free-thumbnail.jpg
+//free-puff2
+//https://upload.wikimedia.org/wikipedia/commons/a/a9/Arothron_meleagris_by_NPS.jpg
+
+//free-seahorse
+//https://media.gettyimages.com/photos/short-snouted-seahorse-picture-id619013026?s=2048x2048
