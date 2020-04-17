@@ -25,7 +25,13 @@ body {
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
-    margin: 2em 1rem;
+    margin: 5em 1rem;
+}
+
+.image-src,
+.source {
+    font-size: 0.7em;
+    color: azure;
 }
 
 @media only screen and (min-width: 35em) {
@@ -45,7 +51,7 @@ h1 {
         padding: 0;
         /* padding: 0.2em 0em 0em 0.2em; */
     }
-    .navbar__menu ul, 
+    .navbar__menu ul,
     .navbar__menu li {
         text-align: left;
     }
@@ -99,7 +105,7 @@ section {
 .brand {
     background: rgb(25, 51, 39);
     font-weight: bolder;
-    font-size: 5rem;
+    font-size: 4rem;
     text-decoration: none;
     color: white;
     padding: 0em 0em 0em 0.5em;
@@ -127,9 +133,10 @@ section {
 
 #navbar__list a:hover {
     color: #cc1;
+    transition: ease 0.3s all;
 }
 
-a:visited {
+.menu_link a:visited {
     color: red;
 }
 
@@ -139,24 +146,10 @@ a:visited {
 .navbar__menu li {
     display: inline-block;
     color: #fff;
-    padding: 0.5em 1em;
+    padding: 0.3em 1em;
     margin: 0em 1em 0.2em 0em;
     background-color: rgba(91, 112, 83, 0.589);
     border-radius: 0.3em;
-}
-
-.navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
-    font-weight: bold;
-    text-decoration: none;
-    color: #000;
-}
-
-.navbar__menu .menu__link:hover {
-    background: #333;
-    color: #fff;
-    transition: ease 0.3s all;
 }
 
 
@@ -174,13 +167,15 @@ a:visited {
 /* Footer Styles */
 
 .page__footer {
-    background: #000;
+    /* background: rgba(0, 0, 0, 0.5); */
+    background: rgb(25, 51, 39);
     padding: 3em;
     color: #fff;
 }
 
 .page__footer p {
     color: #fff;
+    text-align: center;
 }
 
 
@@ -188,7 +183,9 @@ a:visited {
 
 .puffer-source::after {
     content: "Read more at: https://kids.nationalgeographic.com/animals/fish/pufferfish/";
+    font-size: 0.7em;
 }
+
 
 /* ---- Theme Rules ---- */
 
@@ -198,6 +195,10 @@ a:visited {
 .landing__container {
     padding: 1em;
     text-align: left;
+}
+
+.landing__container li {
+    list-style-type: none;
 }
 
 @media only screen and (min-width: 35em) {
@@ -211,6 +212,27 @@ section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
     text-align: right;
+}
+
+section:nth-of-type(even) figure {
+    float: left;
+    margin-left: 0;
+    font-style: italic;
+    font-size: 0.8em;
+    color: rgb(199, 198, 198);
+}
+
+section:nth-of-type(odd) figure {
+    float: right;
+    margin-right: 0;
+    padding: 5px;
+    font-style: italic;
+    font-size: 0.8em;
+    color: rgb(199, 198, 198);
+}
+
+figure img {
+    border-radius: 0.3em;
 }
 
 
