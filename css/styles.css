@@ -11,6 +11,11 @@
 
 /* ---- Base Rules ---- */
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: rgb(136, 203, 171);
     background: linear-gradient(0deg, rgba(136, 203, 171, 1) 0%, rgba(0, 13, 60, 1) 100%);
@@ -28,12 +33,6 @@ h1 {
     margin: 5em 1rem;
 }
 
-.image-src,
-.source {
-    font-size: 0.7em;
-    color: azure;
-}
-
 @media only screen and (min-width: 35em) {
     h1 {
         font-size: 7em;
@@ -41,26 +40,10 @@ h1 {
     }
 }
 
-
-/*  my addition for smaller screens */
-
-@media(min-width: 450px) and (max-width: 650px) {
-    .brand,
-    #brand {
-        font-size: 1em;
-        padding: 0;
-        /* padding: 0.2em 0em 0em 0.2em; */
-    }
-    .navbar__menu ul,
-    .navbar__menu li {
-        text-align: left;
-    }
-}
-
 h2 {
     border-bottom: 1px solid #cc1;
     font-family: 'Oxygen', Sans-Serif;
-    font-size: 3em;
+    font-size: 2em;
     color: #fff;
 }
 
@@ -73,7 +56,7 @@ p {
 /* ---- Layout Rules ---- */
 
 main {
-    margin: 10vh 1em 10vh;
+    margin: 10vh 0em 10vh 0em;
 }
 
 .main-hero {
@@ -85,6 +68,7 @@ section {
     position: relative;
     min-height: 80vh;
     height: 100%;
+    width: auto;
 }
 
 
@@ -103,25 +87,33 @@ section {
 
 #brand,
 .brand {
-    background: rgb(25, 51, 39);
+    background: rgba(25, 51, 39, 0.9);
     font-weight: bolder;
     font-size: 4rem;
     text-decoration: none;
     color: white;
     padding: 0em 0em 0em 0.5em;
-    margin: 0em;
+    margin: 0;
 }
 
 .navbar__toggler {
-    background: rgb(25, 51, 39);
+    background: rgba(25, 51, 39, 0.9);
     border: none;
 }
 
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
-    background: rgb(25, 51, 39);
+    background: rgba(25, 51, 39, 0.9);
+}
+
+#navbar__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2em;
+    list-style-type: none;
 }
 
 
@@ -129,6 +121,8 @@ section {
 
 #navbar__list a {
     text-decoration: none;
+    margin-right: 0.4em;
+    font-size: 0.9em;
 }
 
 #navbar__list a:hover {
@@ -141,22 +135,9 @@ section {
 }
 
 
-/* added style to the nav li*/
-
-.navbar__menu li {
-    display: inline-block;
-    color: #fff;
-    padding: 0.3em 1em;
-    margin: 0em 1em 0.2em 0em;
-    background-color: rgba(91, 112, 83, 0.589);
-    border-radius: 0.3em;
-}
-
-
 /* Header Styles */
 
 .page__header {
-    background: #fff;
     position: fixed;
     top: 0;
     width: 100%;
@@ -167,7 +148,6 @@ section {
 /* Footer Styles */
 
 .page__footer {
-    /* background: rgba(0, 0, 0, 0.5); */
     background: rgb(25, 51, 39);
     padding: 3em;
     color: #fff;
@@ -199,6 +179,13 @@ section {
 
 .landing__container li {
     list-style-type: none;
+}
+
+.image-src,
+.source {
+    font-size: 0.6em;
+    color: azure;
+    display: none;
 }
 
 @media only screen and (min-width: 35em) {
@@ -233,13 +220,14 @@ section:nth-of-type(odd) figure {
 
 figure img {
     border-radius: 0.3em;
+    width: 70vw;
 }
 
 
 /* Background Circles */
 
 
-/* Note that background circles are created with psuedo elements before and after */
+/* background circles are created with psuedo elements before and after */
 
 
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
@@ -308,7 +296,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section Active Styles */
 
 
-/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+/* The active-class class is applied through javascript.  */
 
 section.active-class {
     background: rgb(0, 0, 0);
@@ -334,5 +322,35 @@ section.active-class .landing__container::after {
     }
     to {
         transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    }
+}
+
+
+/*  my addition for larger screens */
+
+@media(min-width: 700px) {
+    h2 {
+        font-size: 3em;
+    }
+    .brand,
+    #brand {
+        font-size: 2em;
+        margin: 0;
+        padding-left: 2vw;
+    }
+    .navbar__menu li {
+        display: inline-block;
+        color: #fff;
+        padding: 0em 1em;
+        margin: 0em 1em 0.2em 0em;
+        background-color: rgba(91, 112, 83, 0.589);
+        border-radius: 0.3em;
+    }
+    figure img {
+        width: 30vw;
+    }
+    .image-src,
+    .source {
+        display: block;
     }
 }

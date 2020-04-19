@@ -24,12 +24,6 @@ document.querySelector('#navbar__list').innerHTML =
  * 
  */
 
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
- */
 //2. my test Declare variables
 const navbarToggler = document.querySelector('.navbar__toggler');
 const navbarMenu = document.querySelector('.navbar__menu ul');
@@ -65,18 +59,6 @@ const toAdd = `<p class="image"><figure><img src="images/blowfish2.jpg"><figcapt
         to get a license to prepare this special creature for diners.</p>
         <p class="image-src">Image source: https://upload.wikimedia.org/wikipedia/commons/a/a9/Arothron_meleagris_by_NPS.jpg</p>
         `
-    // select the section
-const sectOne = document.querySelector('#section1 .landing__container');
-
-// change the header to reflect data
-sectOne.innerHTML = "<h2>BLOWFISH</h2>";
-
-// add a paragraph to section1
-sectOne.insertAdjacentHTML('beforeEnd', '<p>' + blowfish + '</p>');
-
-//adding more to an existing text on the page
-sectOne.insertAdjacentHTML('beforeEnd', toAdd);
-
 
 const remora = {
     image: '<figure><img src="images/remora2.jpg"><figcaption>Remoras swimming with, and hitch-hiking on a shark </figcaption> </figure>',
@@ -183,6 +165,21 @@ const barracuda = {
     <p class="source">Source: "https: //study.com/academy/lesson/barracuda-lesson-for-kids.html"</p>
     <p class="image-src">Image source: https://i.ytimg.com/vi/VOc_yE-LC-w/hqdefault.jpg</p>`
 };
+
+
+// select the section
+const sectOne = document.querySelector('#section1 .landing__container');
+
+// change the header to reflect data
+sectOne.innerHTML = "<h2>BLOWFISH</h2>";
+
+// add a paragraph to section1
+sectOne.insertAdjacentHTML('beforeEnd', '<p>' + blowfish + '</p>');
+
+//adding more to an existing text on the page
+sectOne.insertAdjacentHTML('beforeEnd', toAdd);
+
+
 
 function animalFunFacts(animal) {
     const cardHTML =
@@ -327,26 +324,3 @@ const activeClass = window.addEventListener('scroll', () => {
         }
     }
 });
-
-//remora
-//https: //image.shutterstock.com/z/stock-photo-whale-shark-swimming-under-water-in-the-ocean-near-the-island-of-koh-tao-in-the-gulf-of-thailand-123660703.jpg
-//    Seahorse
-//image: https: //www.inkart.net/images/large_images/pacific_seahorse.jpg
-
-
-//free-barracuda
-//https://i.ytimg.com/vi/VOc_yE-LC-w/hqdefault.jpg
-
-//free-seahorse2
-//https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AGfp-lined-seahorse.jpg&psig=AOvVaw1QZTZ7-7OYfL7WIDgZGneW&ust=1586704875851000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDM7sLW4OgCFQAAAAAdAAAAABAc
-
-//free remora
-//https://media.gettyimages.com/videos/underwater-wildlife-and-scenics-south-africa-video-id543943292?s=640x640
-
-//free-puff1
-//https://p1.pxfuel.com/preview/710/149/191/water-underwater-animal-themes-sea-swimming-animal-animal-wildlife-royalty-free-thumbnail.jpg
-//free-puff2
-//https://upload.wikimedia.org/wikipedia/commons/a/a9/Arothron_meleagris_by_NPS.jpg
-
-//free-seahorse
-//https://media.gettyimages.com/photos/short-snouted-seahorse-picture-id619013026?s=2048x2048
