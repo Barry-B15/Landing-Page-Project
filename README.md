@@ -22,3 +22,5 @@ What am I doing wrong?
 * A new section was also added making four sections in total
 #### Images added
 Just a minor update, added images to the sections
+#### Bigger Screen
+Made some tweaks to allow the page respond better on bigger screens
