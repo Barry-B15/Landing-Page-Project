@@ -50,6 +50,7 @@ h2 {
 p {
     line-height: 1.6em;
     color: #eee;
+    margin-top: 1em;
 }
 
 
@@ -69,6 +70,8 @@ section {
     min-height: 80vh;
     height: 100%;
     width: auto;
+    overflow: hidden;
+    padding-top: 15vh;
 }
 
 
@@ -77,23 +80,19 @@ section {
 
 /* Navigation Styles*/
 
-.brand:visited {
+
+/* .brand:visited {
     color: white;
-}
+} */
 
 .menu_link.active {
-    background: #555555;
+    background: #069e1f;
+    border-bottom: 2px solid whitesmoke;
 }
 
 #brand,
 .brand {
-    background: rgba(25, 51, 39, 0.9);
-    font-weight: bolder;
-    font-size: 4rem;
-    text-decoration: none;
-    color: white;
-    padding: 0em 0em 0em 0.5em;
-    margin: 0;
+    display: none;
 }
 
 .navbar__toggler {
@@ -109,10 +108,9 @@ section {
 
 #navbar__list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.2em;
     list-style-type: none;
 }
 
@@ -120,9 +118,9 @@ section {
 /* Link style */
 
 #navbar__list a {
+    padding: 0.5em;
     text-decoration: none;
-    margin-right: 0.4em;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 #navbar__list a:hover {
@@ -299,7 +297,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* The active-class class is applied through javascript.  */
 
 section.active-class {
-    background: rgb(0, 0, 0);
+    background: rgb(26, 25, 25);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
@@ -334,17 +332,28 @@ section.active-class .landing__container::after {
     }
     .brand,
     #brand {
-        font-size: 2em;
+        display: inline-block;
+        font-size: 1.5em;
         margin: 0;
-        padding-left: 2vw;
+        padding: 0 0 0 2vw;
+        width: 100%;
+        background: rgba(25, 51, 39, 0.9);
+        font-weight: bolder;
+        text-decoration: none;
+        color: white;
+        /* padding: 0em 0em 0em 0.5em;
+        margin: 0; */
     }
     .navbar__menu li {
         display: inline-block;
         color: #fff;
-        padding: 0em 1em;
-        margin: 0em 1em 0.2em 0em;
+        margin: 0em 1em 0.1em 0em;
         background-color: rgba(91, 112, 83, 0.589);
         border-radius: 0.3em;
+    }
+    #navbar__list {
+        display: flex;
+        flex-direction: row;
     }
     figure img {
         width: 30vw;
@@ -352,5 +361,8 @@ section.active-class .landing__container::after {
     .image-src,
     .source {
         display: block;
+    }
+    section {
+        padding-top: 10vh;
     }
 }
