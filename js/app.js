@@ -13,121 +13,37 @@
  * 
  */
 //1. Build menu dynamically
-document.querySelector('#navbar__list').innerHTML =
-    `<li class="menu_link active"><a href="#section1">Section 1</a></li> 
-    <li class="menu_link"><a href="#section2"> Section 2 </a></li>
-    <li class="menu_link"><a href="#section3"> Section 3 </a></li>
-    <li class="menu_link"><a href="#section4"> Section 4 </a></li>`;
+const navMenu = document.querySelector('.navbar__menu'); // from my scroll Work #myList
+const menuList = navMenu.querySelector('#navbar__list');
+const navSections = document.getElementsByTagName('section');
+
+for (let i = 1; i <= navSections.length; i++) {
+    const menuItems = document.createElement('li');
+    menuItems.setAttribute('class', 'menu_link');
+
+    const htmlToAdd = '<a href="#section' + i + '">Section ' + i + '</a>';
+
+    if (navSections[i] == navSections[1]) {
+        menuItems.setAttribute('class', 'menu_link active')
+        menuItems.insertAdjacentHTML('afterBegin', htmlToAdd);
+    } else {
+        menuItems.insertAdjacentHTML('afterBegin', htmlToAdd);
+    }
+    menuList.appendChild(menuItems);
+}
 
 /**
  * Define Global Variables
  * 
  */
-
 //2. my test Declare variables
 const navbarToggler = document.querySelector('.navbar__toggler');
 const navbarMenu = document.querySelector('.navbar__menu ul');
 const navbarLinks = document.querySelectorAll('.navbar__menu a');
 
 //=====================================================================
-// Add Some data
+// Add Some data with JS
 //=====================================================================
-
-const blowfish = [`Blowfish is very popular in Japan. 
-        It is among the most expensive dishes at sushi places.
-        I feel it is necessary for us to know a few facts about this fish.`];
-
-const toAdd = `<p class="image"><figure><img src="images/blowfish2.jpg"><figcaption>Image of a blowfish </figcaption> </figure></p>
-        <p class="blowfish">According to <strong>National Geographic</strong> 
-        <blockquote cite="https://kids.nationalgeographic.com/animals/fish/pufferfish/"> 
-        Pufferfish can inflate into a ball shape to evade predators. 
-        Also known as blowfish, these clumsy swimmers fill their elastic 
-        stomachs with huge amounts of water (and sometimes air) and blow 
-        themselves up to several times their normal size.
-
-        </blockquote> <blockquote> 
-        Some pufferfish species also have spines on their skin to ward off 
-        predators. Even if a predator gobbles up a puffer before it 
-        inflates, it won't enjoy the snack. Most pufferfish contain a 
-        toxic substance that makes them foul tasting and potentially 
-        deadly to other fish. The toxin is deadly to humans. 
-        There is enough poison in one pufferfish to kill 30 adult humans, 
-        and there is no known antidote.</blockquote> 
-         <span class="puffer-source"> <br>
-        Now we can understand why it costs so much; it takes years of training for the chef
-        to get the skills to completely remove the poison and 
-        to get a license to prepare this special creature for diners.</p>
-        <p class="image-src">Image source: https://upload.wikimedia.org/wikipedia/commons/a/a9/Arothron_meleagris_by_NPS.jpg</p>
-        `
-
-const remora = {
-    image: '<figure><img src="images/remora2.jpg"><figcaption>Remoras swimming with, and hitch-hiking on a shark </figcaption> </figure>',
-    name: 'Remora',
-    species: '8 species',
-    fact: `Remoras don't live in shallow waters, they are found 
-            around 328 feet deep in the ocean and their sizes can 
-            nge between 0.98 - 2.95 feet in length. 
-            Remora are nicknamed sharksucker or suckerfish as they use their 
-            suckers to suck on to larger fish for most of their journeys.`,
-    classification: "fish",
-    habitat: 'ocean',
-    weight: 'a common remora can reach a max weight of 1.1kg (2.4lbs)',
-    status: 'not on endangered list',
-    kingdom: 'Animalia',
-    superfamily: 'Percoidea',
-    scientificName: 'Echeneidae',
-    diet: "carnivore",
-    habitat: 'ocean',
-    info: `<p>According to <strong>National Geographic</strong> 
-        <blockquote cite=" https://www.nationalgeographic.com/science/phenomena/2013/07/17/what-good-is-half-a-sucker/">
-        THE REMORA IS so ridiculous that no one would try to make it up. The top of its head is a giant, flat suction cup. It uses 
-        the cup to lock onto the bodies of bigger animals, such as 
-        sharks, sea turtles, and whales. As the big animal swims for 
-        miles in search of a meal, the remora hangs on for the ride. 
-        When its host finds a victim, the remora detaches and feasts 
-        on the remains. It sometimes cleans its host’s body and mouth 
-        of parasites, and then clamps its head back on for another 
-        ride.</blockquote>
-        <p class="image-src">Image source: https://media.gettyimages.com/videos/underwater-wildlife-and-scenics-south-africa-video-id543943292?s=640x640</p>`
-};
-
-const seahorse = {
-    image: '<figure><img src = "images/seahorse2.jpg" ><figcaption>Image of a seahorse </figcaption> </figure>',
-    name: 'seahorse',
-    scientificName: 'Syngnathidae',
-    species: 'about 50 known species',
-    classification: 'Fish',
-    status: 'Data Deficient or Vulnerable, depending on species',
-    lifespan: '(in wild): 3 years',
-    weight: '200g',
-    size: '2- 35cm',
-    topSpeed: '150cm per hour',
-    diet: 'Carnivore',
-    habitat: 'Ocean,  coral reefs, coastal waters',
-    fact: `Seahorse have a neck, unlike other fish. They also have a backbone, but no ribs, 
-        instead they have rings that go all the way down into their tail.
-        Sea horses have 3 main fins to help them swim and steer. 
-        They are one fin on their back and one small fin on each side of their head. 
-        Seahorse also have a 4th fin under their belly for stability control. 
-        Their fins help them stabilize their body in the water.
-        The seahorse male is also known to carry the babies.`,
-    info: `<p>According to <strong>National Geographic</strong> </p>
-        <blockquote cite="https://www.natgeokids.com/nz/discover/animals/sea-life/seahorse-facts/">  
-        Seahorses are tiny fish that are named for the shape of their head, which looks like the 
-        head of ... yup, you guessed it -a tiny horse. There are around 36 seahorse species, which are 
-        found in tropical and temperate coastal waters where they swim upright among seaweed and other plants.
-        </blockquote>
-        <blockquote>
-        Seahorses' bodies are covered in tiny, spiny plates, all the way 
-        from their head down to their curled, flexible tail. The tail can grasp objects, 
-        which comes in handy when these cool critters want to anchor themselves to vegetation. 
-        To move forward through the water, seahorses use their dorsal fin (back fin). 
-        To move up and down, they adjust the volume of air in a tiny pocket inside their body, 
-        called a 'swim bladder'.
-    <blockquote>
-    <p class="source"> Source: https://www.natgeokids.com/nz/discover/animals/sea-life/seahorse-facts/ </p>
-    <p class="image-src">Image source: https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AGfp-lined-seahorse.jpg&psig=AOvVaw1QZTZ7-7OYfL7WIDgZGneW&ust=1586704875851000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDM7sLW4OgCFQAAAAAdAAAAABAc</p>`
-};
 
 const barracuda = {
     image: '<figure><img src="images/barracuda2.jpg"><figcaption>Barracuda showing some sharp teeth </figcaption> </figure>',
@@ -143,42 +59,22 @@ const barracuda = {
     Family: 'Sphyraenidae',
     superfamily: 'Sphyraena',
 
-    fact: ` Behavior and Diet: https: //kids.kiddle.co/Barracuda
+    fact: ` Behavior and Diet:
     Barracudas are ferocious, opportunistic predators, relying on surprise and short bursts of speed, up to 27 mph(43 km / h), to overtake their prey.
 
     Adults of most species are more or less solitary,
-    while young and half - grown fish frequently congregate.Barracudas prey primarily on fish(which may include some as large as themselves).They kill and consume larger prey by tearing chunks of flesh.Barracuda are competitive species and often are seen competing against mackerel, needle fish and sometimes even dolphins for prey.
+    while young and half - grown fish frequently congregate. Barracudas prey primarily on fish(which may include some as large as themselves).They kill and consume larger prey by tearing chunks of flesh.Barracuda are competitive species and often are seen competing against mackerel, needle fish and sometimes even dolphins for prey.
 
     Barracuda feed on an array of prey including fish such as jacks, grunts, groupers, snappers, small tunas, mullets, killifishes, herrings, and anchovies by simply biting them in half.They also seem to consume smaller species of sustenance that are in front of them.`,
 
-    info: ` Barracuda are snake - like in appearance, with prominent, sharp - edged, fang - like teeth, much like piranha, all of different sizes, set in sockets of their large jaws.They have large, pointed heads with an underbite in many species.Their gill covers have no spines and are covered with small scales.Their two dorsal fins are widely separated, with the anterior fin having five spines, and the posterior fin having one spine and 9 soft rays.The posterior dorsal fin is similar in size to the anal fin and is situated above it.The lateral line is prominent and extends straight from head to tail.The spinous dorsal fin is placed above the pelvic fins and is normally retracted in a groove.The caudal fin is moderately forked with its posterior edged double - curved and is set at the end of a stout peduncle.The pectoral fins are placed low on the sides.Its swim bladder is large.
-    <p>
-    The barracuda 's long, thin body makes it an excellent swimmer, up to 25 mph, which is about the speed a car drives on a quiet, neighborhood street. The giant mouth filled with many uneven razor-sharp teeth also makes it a great hunter, like a tiger! Its fangs are in a strong bottom jaw that juts outs farther than the upper jaw, giving it a frightening look.
+    info: ` Barracuda are snake - like in appearance, with prominent, sharp - edged, fang - like teeth, much like piranha, all of different sizes, set in sockets of their large jaws. They have large, pointed heads with an underbite in many species.Their gill covers have no spines and are covered with small scales. Their two dorsal fins are widely separated, with the anterior fin having five spines, and the posterior fin having one spine and 9 soft rays. The posterior dorsal fin is similar in size to the anal fin and is situated above it. The lateral line is prominent and extends straight from head to tail. The spinous dorsal fin is placed above the pelvic fins and is normally retracted in a groove. The caudal fin is moderately forked with its posterior edged double - curved and is set at the end of a stout peduncle. The pectoral fins are placed low on the sides. Its swim bladder is large.
+
+    <p class="source">
+    Source: "https: //study.com/academy/lesson/barracuda-lesson-for-kids.html" ,
+             https: //kids.kiddle.co/Barracuda
     </p>
-    <p>
-    The long and slender body of the barracuda makes it a fast swimmer.
-    barracuda
-    Barracuda are dark green, blue, or grayish - brown and have stripes on top of their bodies, like a tiger, too!Their bellies are always white.Young barracuda can even turn different colors and patterns to blend in with their surroundings.
-    </p>
-    <p>
-    Many types of barracuda are small, up to 18 inches, which is about as long as your arm.But the great barracuda is three times that size and can grow up to six feet long and weigh 110 pounds.That 's as big as an adult human!</p>
-    <p class="source">Source: "https: //study.com/academy/lesson/barracuda-lesson-for-kids.html"</p>
     <p class="image-src">Image source: https://i.ytimg.com/vi/VOc_yE-LC-w/hqdefault.jpg</p>`
 };
-
-
-// select the section
-const sectOne = document.querySelector('#section1 .landing__container');
-
-// change the header to reflect data
-sectOne.innerHTML = "<h2>BLOWFISH</h2>";
-
-// add a paragraph to section1
-sectOne.insertAdjacentHTML('beforeEnd', '<p>' + blowfish + '</p>');
-
-//adding more to an existing text on the page
-sectOne.insertAdjacentHTML('beforeEnd', toAdd);
-
 
 
 function animalFunFacts(animal) {
@@ -203,19 +99,11 @@ function animalFunFacts(animal) {
     return cardHTML;
 }
 
-//add to Section 2 data
-const sectTwo = document.querySelector('#section2 .landing__container');
-sectTwo.innerHTML = '<h2>REMORA';
-sectTwo.insertAdjacentHTML('beforeEnd', animalFunFacts(remora));
-
-//add to section 3 data
-const sectThree = document.querySelector('#section3 .landing__container');
-sectThree.innerHTML = "<h2>SEAHORSE";
-sectThree.insertAdjacentHTML('beforeEnd', animalFunFacts(seahorse));
-
-const sectFour = document.querySelector('#section4 .landing__container');
-sectFour.innerHTML = '<h2>BARRACUDA';
-sectFour.insertAdjacentHTML('beforeEnd', animalFunFacts(barracuda));
+//add to Section 4 data with js
+// this may not be a requirement but I am adding this just as a demo how to add data with js
+const sectFour = document.querySelector('#section4 .landing__container'); // get the setion container
+sectFour.innerHTML = '<h2>BARRACUDA'; // Change the header
+sectFour.insertAdjacentHTML('beforeEnd', animalFunFacts(barracuda)); // insert the data
 
 //===============End of main Content data==============================================
 
@@ -310,6 +198,7 @@ const active = document.getElementsByTagName('a#section1');
 
 const bgColors = ['rgba(0, 0, 0, 0.1', 'rgba(0, 0, 0, 0.2', 'rgba(0, 0, 0, 0.3', 'rgba(0,0,0,0.4)'];
 // This colors for the active sections
+const inViewPort = ['Section 1', 'Section 2', 'Section 3', 'Section 4']
 
 const activeClass = window.addEventListener('scroll', () => {
 
@@ -324,3 +213,17 @@ const activeClass = window.addEventListener('scroll', () => {
         }
     }
 });
+
+// Hightlight the active section /scrolled To section on the navigation bar
+
+const links = document.querySelectorAll('.menu_link');
+
+function changeLinkState() {
+    let index = sections.length;
+
+    while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+    links.forEach((link) => link.classList.remove('active'));
+    links[index].classList.add('active');
+}
+changeLinkState();
+window.addEventListener('scroll', changeLinkState);
