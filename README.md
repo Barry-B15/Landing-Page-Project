@@ -4,7 +4,6 @@
 ## Prerequisites:
  * A computer
  * A personal or company dormain, or webhost
-
 ## Installing:
 Simply upload to a host site or personal dormain following your webhost instructions and this is ready for use.
 
@@ -53,3 +52,26 @@ Thanks to Udacity for providing the initial static HTML framework and CSS psuedo
     https: //kids.kiddle.co/Barracuda
 	https: //study.com/academy/lesson/barracuda-lesson-for-kids.html
 	image: https://i.ytimg.com/vi/VOc_yE-LC-w/hqdefault.jpg
+
+## Some of What I have done
+As a first step, I have:
+* Connected the index.html to the js file
+* Added a few js code to generate the head navigation and 
+* Added some CSS style to the links.
+### Next:
+* I added a smooth scrolling effect
+* With some CSS update
+### Adding Data to the Sections
+I've added data from the .js file but lost the initial rolling circles
+What am I doing wrong?
+### Activate the section near the top of viewport
+* Fixed the rolling circles in the sections
+* Now the sections change when scroll to the top of the viewport 
+* The active sections also change colors
+* A new section was also added making four sections in total
+#### Images added
+Just a minor update, added images to the sections
+#### Bigger Screen
+Made some tweaks to allow the page respond better on bigger screens
+## Last update
+I have made the nav menu to show what section the user scrolls to
